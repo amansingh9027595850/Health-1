@@ -1,0 +1,136 @@
+{
+  "clinical_cohorts": [
+    {
+      "id": "aa134c6d-9955-48dd-921a-c585249caa68",
+      "name": "ICU Septic Shock — Early Norepinephrine Cohort",
+      "domain": "Critical Care / ICU",
+      "sample_size": 850,
+      "treated_count": 362,
+      "control_count": 488,
+      "treatment_variable": "Early Norepinephrine (<6h)",
+      "outcome_variable": "28-Day In-Hospital Mortality",
+      "outcome_type": "binary",
+      "confounders": [
+        "sofa_score",
+        "lactate_mmol_L",
+        "mean_arterial_pressure",
+        "age",
+        "mechanical_vent"
+      ],
+      "ground_truth_ate": -0.092,
+      "created_at": "2026-10-20T14:11:43.881Z"
+    },
+    {
+      "id": "10ff34d9-6237-4df7-98dc-dd5fa73123c6",
+      "name": "Cardiology — High-Intensity Statin & 3-Year MACE",
+      "domain": "Cardiovascular Care",
+      "sample_size": 900,
+      "treated_count": 410,
+      "control_count": 490,
+      "treatment_variable": "High-Intensity Statin",
+      "outcome_variable": "3-Year Major Adverse Cardiac Event (MACE)",
+      "outcome_type": "binary",
+      "confounders": [
+        "baseline_ldl",
+        "prior_mi",
+        "systolic_bp",
+        "hba1c",
+        "age",
+        "smoking_status"
+      ],
+      "ground_truth_ate": -0.076,
+      "created_at": "2026-10-21T14:11:43.895Z"
+    }
+  ],
+  "personal_health_assessments": [
+    {
+      "id": "9d7370d7-a0cd-401d-98ac-0f191432e32f",
+      "user_name": "Robert Chen (CAD & T2D)",
+      "domain": "Cardiovascular Care",
+      "treatment_name": "High-Intensity Statin (Atorvastatin 80mg)",
+      "target_condition": "5-Year Major Adverse Cardiac Event (MACE)",
+      "inputs": {
+        "age": 67,
+        "sex": "male",
+        "systolicBp": 154,
+        "ldlCholesterol": 168,
+        "hba1c": 8.2,
+        "smokingStatus": "former",
+        "priorCardioHistory": true,
+        "egfr": 58,
+        "bmi": 29.5
+      },
+      "propensity_score": 0.88,
+      "baseline_risk_y0": 0.384,
+      "treated_risk_y1": 0.238,
+      "causal_risk_reduction_arr": -0.146,
+      "relative_risk_reduction_rrr": 38,
+      "number_needed_to_treat_nnt": 7,
+      "clinical_recommendation": "High Clinical Benefit: Individual absolute risk reduction of 14.6% strongly favors initiating High-Intensity Statin. Treating 7 patients with this clinical phenotype prevents 1 major adverse event.",
+      "e_value_point": 2.38,
+      "created_at": "2026-10-23T10:11:43.895Z"
+    },
+    {
+      "id": "ea4ada74-b960-42a3-997d-ff7511209a87",
+      "user_name": "Elena Rodriguez (Hypertensive Smoker)",
+      "domain": "Cardiovascular Care",
+      "treatment_name": "High-Intensity Statin (Atorvastatin 80mg)",
+      "target_condition": "5-Year Major Adverse Cardiac Event (MACE)",
+      "inputs": {
+        "age": 55,
+        "sex": "female",
+        "systolicBp": 148,
+        "ldlCholesterol": 152,
+        "hba1c": 6.2,
+        "smokingStatus": "active",
+        "priorCardioHistory": false,
+        "egfr": 84,
+        "bmi": 27.2
+      },
+      "propensity_score": 0.62,
+      "baseline_risk_y0": 0.225,
+      "treated_risk_y1": 0.158,
+      "causal_risk_reduction_arr": -0.067,
+      "relative_risk_reduction_rrr": 29.8,
+      "number_needed_to_treat_nnt": 15,
+      "clinical_recommendation": "High Clinical Benefit: Individual absolute risk reduction of 6.7% indicates meaningful preventive efficacy. Smoking cessation combined with statin therapy offers maximum risk reduction.",
+      "e_value_point": 1.86,
+      "created_at": "2026-10-23T06:11:43.895Z"
+    }
+  ],
+  "causal_experiments": [
+    {
+      "id": "83d9ceee-270d-4cc8-8e6d-26f429f21460",
+      "experiment_title": "Critical Care / ICU - Doubly Robust AIPW",
+      "method": "Doubly Robust AIPW Estimator",
+      "ate": -0.091,
+      "ci_lower": -0.114,
+      "ci_upper": -0.068,
+      "std_error": 0.0117,
+      "p_value": 0.0001,
+      "effective_sample_size": 780,
+      "parameters": {
+        "caliperFactor": 0.2,
+        "weightTruncation": 0.01,
+        "sampleSize": 850
+      },
+      "e_value_point": 1.74,
+      "e_value_ci": 1.58,
+      "bias_against_ground_truth": 0.001,
+      "created_at": "2026-10-23T02:11:43.895Z"
+    }
+  ],
+  "balance_diagnostics": [],
+  "patient_counterfactuals": [],
+  "causal_audit_logs": [
+    {
+      "id": "f4c831da-0be7-4215-8ce5-c014c032642b",
+      "action": "database_initialized",
+      "details": {
+        "engine": "supabase_local_server",
+        "port": 54321
+      },
+      "timestamp": "2026-10-23T14:11:43.895Z"
+    }
+  ]
+}

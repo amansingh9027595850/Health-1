@@ -1,0 +1,88 @@
+{
+  "assessments": [
+    {
+      "id": "b97e4d23-059f-4f70-b90a-2f6d2f349f4c",
+      "createdAt": "2026-10-24T04:12:08.015Z",
+      "userName": "Demo Patient 1",
+      "domain": "Cardiovascular Care",
+      "treatmentName": "High-Intensity Statin (Atorvastatin 80mg)",
+      "targetCondition": "5-Year Major Adverse Cardiac Event (Heart Attack / Stroke)",
+      "inputs": {
+        "age": 62,
+        "sex": "male",
+        "systolicBp": 142,
+        "ldlCholesterol": 148,
+        "hba1c": 7.2,
+        "smokingStatus": "former",
+        "priorCardioHistory": true,
+        "egfr": 68,
+        "bmi": 28.4
+      },
+      "propensityScore": 0.650218548573827,
+      "baselineRiskY0": 0.5598000000000001,
+      "treatedRiskY1": 0.34707600000000005,
+      "causalRiskReductionARR": -0.21272400000000002,
+      "relativeRiskReductionRRR": 38,
+      "numberNeededToTreatNNT": 5,
+      "clinicalRecommendation": "High Clinical Benefit: Your predicted absolute risk reduction is 21.3%. Evidence strongly indicates significant health protection from High-Intensity Statin (Atorvastatin 80mg). Treating 5 patients with this exact clinical profile prevents 1 major adverse event.",
+      "eValuePoint": 2.607163548865964,
+      "storageSource": "backend"
+    },
+    {
+      "id": "2be62d43-f7e7-4375-9f17-98ca9fdce673",
+      "userName": "Demo Patient 2",
+      "domain": "Cardiovascular Care",
+      "treatmentName": "High-Intensity Statin (Atorvastatin 80mg)",
+      "targetCondition": "5-Year Major Adverse Cardiac Event (MACE)",
+      "inputs": {
+        "age": 67,
+        "sex": "male",
+        "systolicBp": 154,
+        "ldlCholesterol": 168,
+        "hba1c": 8.4,
+        "smokingStatus": "former",
+        "priorCardioHistory": true,
+        "egfr": 58,
+        "bmi": 29.5
+      },
+      "propensityScore": 0.88,
+      "baselineRiskY0": 0.384,
+      "treatedRiskY1": 0.238,
+      "causalRiskReductionARR": -0.146,
+      "relativeRiskReductionRRR": 38,
+      "numberNeededToTreatNNT": 7,
+      "clinicalRecommendation": "High Clinical Benefit: ARR 14.6% strongly favors statin therapy. NNT=7.",
+      "eValuePoint": 2.38,
+      "storageSource": "backend",
+      "createdAt": "2026-10-23T04:09:41.875Z"
+    },
+    {
+      "id": "8d4511bd-58b6-4faa-a3be-56be9a220c65",
+      "userName": "Demo Patient 3",
+      "domain": "Cardiovascular Care",
+      "treatmentName": "High-Intensity Statin (Atorvastatin 80mg)",
+      "targetCondition": "5-Year Major Adverse Cardiac Event (MACE)",
+      "inputs": {
+        "age": 55,
+        "sex": "female",
+        "systolicBp": 148,
+        "ldlCholesterol": 152,
+        "hba1c": 6.2,
+        "smokingStatus": "active",
+        "priorCardioHistory": false,
+        "egfr": 82,
+        "bmi": 27.2
+      },
+      "propensityScore": 0.62,
+      "baselineRiskY0": 0.225,
+      "treatedRiskY1": 0.158,
+      "causalRiskReductionARR": -0.067,
+      "relativeRiskReductionRRR": 29.8,
+      "numberNeededToTreatNNT": 15,
+      "clinicalRecommendation": "Moderate Benefit: ARR 6.7%. Combined statin + smoking cessation recommended.",
+      "eValuePoint": 1.86,
+      "storageSource": "backend",
+      "createdAt": "2026-10-24T02:09:41.876Z"
+    }
+  ]
+}
